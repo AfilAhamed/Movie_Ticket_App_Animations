@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/constants/constants.dart';
 import 'package:movie_ticket_app/view/home_screen/widget/background_list_view.dart';
+import 'package:movie_ticket_app/view/home_screen/widget/custom_appbar.dart';
 import 'package:movie_ticket_app/view/home_screen/widget/movie_list_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
             movieItemWidth: movieItemWidth,
             movieScrollController: movieScrollController,
           ),
+          const CustomAppBar(),
         ],
       ),
     );
