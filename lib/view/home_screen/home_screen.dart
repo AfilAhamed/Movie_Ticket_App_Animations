@@ -20,10 +20,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    movieScrollController.addListener(() {
+      backgroundScrollController
+          .jumpTo(movieScrollController.offset * (size.width / movieItemWidth));
+    });
     return Scaffold(
       backgroundColor: black,
       body: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         children: [
           BackgroundListView(
             backgroundScrollController: backgroundScrollController,

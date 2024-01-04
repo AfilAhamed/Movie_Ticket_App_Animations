@@ -6,6 +6,7 @@ class BackgroundListView extends StatelessWidget {
   BackgroundListView({super.key, required this.backgroundScrollController});
 
   final ScrollController backgroundScrollController;
+
   final movieData = MovieData();
 
   @override
