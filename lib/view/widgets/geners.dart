@@ -8,7 +8,7 @@ class GenresFormat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget _dot = Container(
+    Widget dot = Container(
       width: 6.0,
       height: 6.0,
       margin: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -26,7 +26,7 @@ class GenresFormat extends StatelessWidget {
                 genres[index],
                 style: TextStyle(color: color, fontSize: 12),
               ),
-              _dot,
+              dot,
             ],
           );
         } else {
