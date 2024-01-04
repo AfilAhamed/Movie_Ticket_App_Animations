@@ -19,7 +19,7 @@ class BackgroundListView extends StatelessWidget {
         itemCount: movieData.movieList!.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return Container(
+          return SizedBox(
             width: size.width,
             height: size.height,
             child: Stack(
