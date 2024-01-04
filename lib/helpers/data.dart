@@ -6,8 +6,6 @@ class MovieData {
   List<MovieModel>? movieList = [];
 
   MovieData() {
-    //movieList = [];
-
     movieList!.add(
       MovieModel(
           id: 0,
