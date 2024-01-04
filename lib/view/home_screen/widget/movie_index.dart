@@ -86,7 +86,7 @@ class MovieIndex extends StatelessWidget {
           SizedBox(
             height: size.height * .008,
           ),
-          Container(
+          SizedBox(
             height: size.height * .15,
             child: Align(
               alignment: Alignment.center,
