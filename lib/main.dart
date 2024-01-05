@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_ticket_app/view/home_screen/home_screen.dart';
+import 'package:movie_ticket_app/view/drawer_screen/drawer_menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: "Open-Sans",
       ),
-      home: const HomeScreen(),
+      home: const DrawerMenu(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:movie_ticket_app/constants/constants.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -15,18 +16,23 @@ class CustomAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: size.height * 0.075,
-              width: size.width * 0.15,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: white.withOpacity(0.35),
-                  ),
-                  borderRadius: BorderRadius.circular(20.0)),
-              child: const Icon(
-                Icons.clear_all_outlined,
-                color: white,
-                size: 30.0,
+            InkWell(
+              onTap: () {
+                ZoomDrawer.of(context)!.toggle();
+              },
+              child: Container(
+                height: size.height * 0.075,
+                width: size.width * 0.15,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: white.withOpacity(0.35),
+                    ),
+                    borderRadius: BorderRadius.circular(20.0)),
+                child: const Icon(
+                  Icons.clear_all_outlined,
+                  color: white,
+                  size: 30.0,
+                ),
               ),
             ),
             Container(

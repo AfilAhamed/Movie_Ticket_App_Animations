@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/constants/constants.dart';
+import 'package:movie_ticket_app/view/details_screen/detail_screen.dart';
 import '../../../helpers/data.dart';
 import '../../widgets/geners.dart';
 import '../../widgets/star_rating.dart';
@@ -112,19 +113,25 @@ class MovieIndex extends StatelessWidget {
           SizedBox(
             height: size.height * .01,
           ),
-          Container(
-            width: size.width * .25,
-            height: size.height * .05,
-            decoration: BoxDecoration(
-                color: secondary, borderRadius: BorderRadius.circular(10.0)),
-            child: const Center(
-                child: Text(
-              'BUY TICKET',
-              style: TextStyle(
-                color: white,
-                fontWeight: FontWeight.bold,
-              ),
-            )),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DetailScreen()));
+            },
+            child: Container(
+              width: size.width * .25,
+              height: size.height * .05,
+              decoration: BoxDecoration(
+                  color: secondary, borderRadius: BorderRadius.circular(10.0)),
+              child: const Center(
+                  child: Text(
+                'BUY TICKET',
+                style: TextStyle(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
+            ),
           ),
           SizedBox(
             height: size.height * .01,
