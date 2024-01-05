@@ -115,8 +115,13 @@ class MovieIndex extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DetailScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailScreen(
+                            movie: movieData.movieList![index],
+                            size: size,
+                          )));
             },
             child: Container(
               width: size.width * .25,
@@ -136,13 +141,24 @@ class MovieIndex extends StatelessWidget {
           SizedBox(
             height: size.height * .01,
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image(
-              image: movieData.movieList![index].image.image,
-              width: size.width * 0.5,
-              height: size.height * 0.35,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailScreen(
+                            movie: movieData.movieList![index],
+                            size: size,
+                          )));
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Image(
+                image: movieData.movieList![index].image.image,
+                width: size.width * 0.5,
+                height: size.height * 0.35,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(
