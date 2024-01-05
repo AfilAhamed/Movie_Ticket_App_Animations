@@ -10,13 +10,13 @@ class MovieIndex extends StatelessWidget {
   final ScrollController movieScrollController;
   final double movieItemWidth;
 
-  MovieIndex(
+  const MovieIndex(
       {super.key,
       required this.index,
       required this.movieScrollController,
       required this.movieItemWidth});
 
-  final movieData = MovieData();
+  // final movieData = MovieData();
 
   final double maxMovieTranslate = 65;
 
@@ -65,6 +65,7 @@ class MovieIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final movieData = MovieData(context);
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: appPadding + 4),

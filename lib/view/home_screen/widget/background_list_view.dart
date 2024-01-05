@@ -3,14 +3,15 @@ import 'package:movie_ticket_app/constants/constants.dart';
 import 'package:movie_ticket_app/helpers/data.dart';
 
 class BackgroundListView extends StatelessWidget {
-  BackgroundListView({super.key, required this.backgroundScrollController});
+  const BackgroundListView(
+      {super.key, required this.backgroundScrollController});
 
   final ScrollController backgroundScrollController;
 
-  final movieData = MovieData();
-
   @override
   Widget build(BuildContext context) {
+    final movieData = MovieData(context);
+
     Size size = MediaQuery.of(context).size;
     return ListView.builder(
         controller: backgroundScrollController,

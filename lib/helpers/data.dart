@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import '../model/cast_model.dart';
 import '../model/movie_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MovieData {
   List<MovieModel>? movieList = [];
-
-  MovieData() {
+  final BuildContext context;
+  MovieData(this.context) {
     movieList!.add(
       MovieModel(
           id: 0,
-          name: 'Togo',
+          name: AppLocalizations.of(context)!.movieName1,
           rating: 8.0,
           genre: [
-            "Drama",
+            AppLocalizations.of(context)!.gener1,
           ],
-          director: 'Ericson Core',
-          storyLine:
-              'Togo (1913  December 5, 1929) was the lead sled dog of Leonhard Seppala and his dog sled team in the 1925 serum run to Nome across central and northern Alaska. Even though he covered more distance (260 miles) than his co-sledder Balto (55 miles), he didn\'t get as much fame.',
+          director: AppLocalizations.of(context)!.director1,
+          storyLine: AppLocalizations.of(context)!.storyLine1,
           image: Image.asset("assets/image/togo.jpeg"),
           imageLogo: Image.asset("assets/image/togologo.png"),
           castList: [
@@ -41,12 +41,11 @@ class MovieData {
     movieList!.add(
       MovieModel(
           id: 1,
-          name: 'Joker',
+          name: AppLocalizations.of(context)!.movieName2,
           rating: 8.5,
           genre: ["Crime", "Drama"],
-          director: 'Todd Phillips',
-          storyLine:
-              "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.",
+          director: AppLocalizations.of(context)!.director2,
+          storyLine: AppLocalizations.of(context)!.storyLine2,
           image: Image.asset("assets/image/joker.jpeg"),
           imageLogo: Image.asset("assets/image/jokerlogo.png"),
           castList: [
@@ -71,12 +70,11 @@ class MovieData {
     movieList!.add(
       MovieModel(
           id: 2,
-          name: 'Planet of the Apes',
+          name: AppLocalizations.of(context)!.movieName3,
           rating: 5.7,
           genre: ["Action", "Adventure", "Fantasy"],
-          director: 'Tim Burton',
-          storyLine:
-              "Complex sociological themes run through this science-fiction classic about three astronauts marooned on a futuristic planet where apes rule and humans are slaves. The stunned trio discovers that these highly intellectual simians can both walk upright and talk. They have even established a class system and a political structure. The astronauts suddenly find themselves part of a devalued species, trapped and imprisoned by the apes.",
+          director: AppLocalizations.of(context)!.director3,
+          storyLine: AppLocalizations.of(context)!.storyLine3,
           image: Image.asset("assets/image/apes.jpeg"),
           imageLogo: Image.asset("assets/image/apeslogo.png"),
           castList: [

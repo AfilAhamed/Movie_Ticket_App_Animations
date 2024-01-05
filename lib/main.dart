@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movie_ticket_app/view/drawer_screen/drawer_menu.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'l10n/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +23,14 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: "Open-Sans",
       ),
+      supportedLocales: L10n.all,
+      locale: const Locale('ml'),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
       home: const DrawerMenu(),
     );
   }

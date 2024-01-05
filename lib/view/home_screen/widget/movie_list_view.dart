@@ -7,19 +7,19 @@ class MovieListView extends StatelessWidget {
   final ScrollController movieScrollController;
   final double movieItemWidth;
 
-  MovieListView(
+  const MovieListView(
       {super.key,
       required this.movieScrollController,
       required this.movieItemWidth});
 
-  final movieData = MovieData();
-
   @override
   Widget build(BuildContext context) {
+    final movieData = MovieData(context);
+
     Size size = MediaQuery.of(context).size;
 
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 700),
       tween: Tween<double>(begin: 600, end: 0),
       curve: Curves.easeOutCubic,
       builder: (_, value, child) {

@@ -58,7 +58,7 @@ class DetailSheet extends StatelessWidget {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(Icons.arrow_back)),
+                          icon: const Icon(Icons.arrow_back)),
                       Text(
                         textAlign: TextAlign.center,
                         movie.name,

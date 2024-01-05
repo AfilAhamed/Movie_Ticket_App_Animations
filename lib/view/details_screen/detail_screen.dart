@@ -31,7 +31,7 @@ class _DetailScreenState extends State<DetailScreen>
         upperBoundValue: AnimationControllerValue(
           percentage: 8.9,
         ),
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         springDescription: SpringDescription.withDampingRatio(
             mass: 1,
             stiffness: Stiffness.LOW,
