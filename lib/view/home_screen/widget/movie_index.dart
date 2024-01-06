@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/constants/constants.dart';
+import 'package:movie_ticket_app/controller/animation_controller.dart';
 import 'package:movie_ticket_app/view/details_screen/detail_screen.dart';
-import '../../../helpers/data.dart';
+import 'package:provider/provider.dart';
+import '../../../services/data.dart';
 import '../../widgets/geners.dart';
 import '../../widgets/star_rating.dart';
 
@@ -18,52 +20,9 @@ class MovieIndex extends StatelessWidget {
 
   // final movieData = MovieData();
 
-  final double maxMovieTranslate = 65;
-
-  double _movieTranslate(double offset, double activeOffset) {
-    double translate;
-    if (movieScrollController.offset + movieItemWidth <= activeOffset) {
-      translate = maxMovieTranslate;
-    } else if (movieScrollController.offset <= activeOffset) {
-      translate = maxMovieTranslate -
-          ((movieScrollController.offset - (activeOffset - movieItemWidth)) /
-              movieItemWidth *
-              maxMovieTranslate);
-    } else if (movieScrollController.offset < activeOffset + movieItemWidth) {
-      translate =
-          ((movieScrollController.offset - (activeOffset - movieItemWidth)) /
-                  movieItemWidth *
-                  maxMovieTranslate) -
-              maxMovieTranslate;
-    } else {
-      translate = maxMovieTranslate;
-    }
-    return translate;
-  }
-
-  double _movieDescriptionOpacity(double offset, double activeOffset) {
-    double opacity;
-    if (movieScrollController.offset + movieItemWidth <= activeOffset) {
-      opacity = 0;
-    } else if (movieScrollController.offset <= activeOffset) {
-      opacity =
-          ((movieScrollController.offset - (activeOffset - movieItemWidth)) /
-              movieItemWidth *
-              100);
-    } else if (movieScrollController.offset < activeOffset + movieItemWidth) {
-      opacity = 100 -
-          (((movieScrollController.offset - (activeOffset - movieItemWidth)) /
-                  movieItemWidth *
-                  100) -
-              100);
-    } else {
-      opacity = 0;
-    }
-    return opacity;
-  }
-
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<MovieAnimationController>(context);
     Size size = MediaQuery.of(context).size;
     final movieData = MovieData(context);
 
@@ -77,8 +36,11 @@ class MovieIndex extends StatelessWidget {
             builder: (ctx, child) {
               double activeOffset = index * movieItemWidth;
 
-              double translate =
-                  _movieTranslate(movieScrollController.offset, activeOffset);
+              double translate = provider.movieTranslate(
+                  movieScrollController.offset,
+                  activeOffset,
+                  movieScrollController,
+                  movieItemWidth);
 
               return SizedBox(
                 height: translate,
@@ -169,14 +131,18 @@ class MovieIndex extends StatelessWidget {
             animation: movieScrollController,
             builder: (context, child) {
               double activeOffset = index * movieItemWidth;
-              double opacity = _movieDescriptionOpacity(
-                  movieScrollController.offset, activeOffset);
+              double opacity = provider.movieDescriptionOpacity(
+                  movieScrollController.offset,
+                  activeOffset,
+                  movieScrollController,
+                  movieItemWidth);
 
               return Opacity(
                 opacity: opacity / 100,
                 child: Column(
                   children: <Widget>[
                     Text(
+                      overflow: TextOverflow.ellipsis,
                       movieData.movieList![index].name,
                       style: TextStyle(
                           color: white,

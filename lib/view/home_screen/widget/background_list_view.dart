@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/constants/constants.dart';
-import 'package:movie_ticket_app/helpers/data.dart';
+import 'package:movie_ticket_app/services/data.dart';
 
 class BackgroundListView extends StatelessWidget {
   const BackgroundListView(

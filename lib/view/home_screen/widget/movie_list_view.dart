@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
-import '../../../helpers/data.dart';
+import '../../../services/data.dart';
 import 'movie_index.dart';
 
 class MovieListView extends StatelessWidget {
