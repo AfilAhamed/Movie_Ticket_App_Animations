@@ -8,4 +8,4 @@ const Color primary = Color(0xffF9B015);
 const Color secondary = Color(0xFFC62828);
 const Color white = Colors.white;
 const Color black = Colors.black;
-const Color greyy = Colors.grey;
+const Color grey = Colors.grey;
