@@ -20,7 +20,7 @@ class MenuScreen extends StatelessWidget {
         children: [
           TextButton(
               onPressed: () {
-                provider.setLocale(const Locale('en'));
+                provider.setLocale('en');
               },
               child: const Text(
                 'English',
@@ -28,7 +28,7 @@ class MenuScreen extends StatelessWidget {
               )),
           TextButton(
               onPressed: () {
-                provider.setLocale(const Locale('ml'));
+                provider.setLocale('ml');
               },
               child: const Text(
                 'Malayalam',

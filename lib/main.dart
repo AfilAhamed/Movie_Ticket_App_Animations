@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movie_ticket_app/controller/animation_controller.dart';
 import 'package:movie_ticket_app/controller/localization_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:movie_ticket_app/view/splash_screen.dart/splash_screen.dart';
+import 'package:movie_ticket_app/view/drawer_screen/drawer_menu.dart';
 import 'package:provider/provider.dart';
 import 'l10n/l10n.dart';
 
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      home: const SplashScreen(),
+      home: const DrawerMenu(),
     );
   }
 }
